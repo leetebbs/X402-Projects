@@ -12,7 +12,7 @@ declare global {
   }
 }
 
-type FileType = "image" | "pdf" | "text" | "unknown";
+type FileType = "image" | "pdf" | "text" | "json" | "unknown";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -25,6 +25,7 @@ export default function Home() {
   const getFileType = (file: File): FileType => {
     if (file.type.startsWith("image/")) return "image";
     if (file.type === "application/pdf") return "pdf";
+    if (file.type === "application/json" || file.name.endsWith(".json")) return "json";
     if (file.type === "text/plain" || file.name.endsWith(".txt")) return "text";
     return "unknown";
   };
@@ -44,7 +45,7 @@ export default function Home() {
           setTextContent(null);
         };
         reader.readAsDataURL(selectedFile);
-      } else if (type === "text") {
+      } else if (type === "text" || type === "json") {
         reader.onloadend = () => {
           const content = reader.result as string;
           setTextContent(content);
@@ -146,7 +147,7 @@ export default function Home() {
                     {file ? "Click to change file" : "Click to upload or drag and drop"}
                   </p>
                   <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                    Images, PDF, or Text files
+                    Images, PDF, Text, or JSON files
                   </p>
                   {file && (
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
@@ -158,7 +159,7 @@ export default function Home() {
                   type="file"
                   className="hidden"
                   onChange={handleFileChange}
-                  accept="image/*,.pdf,.txt"
+                  accept="image/*,.pdf,.txt,.json"
                 />
               </label>
             </div>
@@ -177,6 +178,15 @@ export default function Home() {
                 {fileType === "text" && textContent && (
                   <div className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
                     <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Text Preview:</p>
+                    <pre className="text-xs overflow-auto max-h-64 text-gray-700 dark:text-gray-300 font-mono whitespace-pre-wrap break-words">
+                      {textContent.substring(0, 1000)}
+                      {textContent.length > 1000 && "..."}
+                    </pre>
+                  </div>
+                )}
+                {fileType === "json" && textContent && (
+                  <div className="w-full bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">JSON Preview:</p>
                     <pre className="text-xs overflow-auto max-h-64 text-gray-700 dark:text-gray-300 font-mono whitespace-pre-wrap break-words">
                       {textContent.substring(0, 1000)}
                       {textContent.length > 1000 && "..."}
@@ -203,7 +213,7 @@ export default function Home() {
                   disabled={uploading}
                   className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-bold py-2 px-4 rounded-lg transition"
                 >
-                  {uploading ? "Uploading..." : `Upload ${fileType === "text" ? "Text" : fileType === "pdf" ? "PDF" : "Image"}`}
+                  {uploading ? "Uploading..." : `Upload ${fileType === "text" ? "Text" : fileType === "json" ? "JSON" : fileType === "pdf" ? "PDF" : "Image"}`}
                 </button>
               </div>
             )}
