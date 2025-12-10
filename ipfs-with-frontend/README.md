@@ -70,12 +70,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Usage
 
-1. **Connect Wallet**: The application requires a Web3 wallet connection for file uploads
-2. **Select File**: Choose an image, PDF, or text file to upload
-3. **Preview**: Review the file preview (available for images and text)
-4. **Upload**: Click the upload button to submit your file
-5. **Payment**: The x402 middleware will handle the payment automatically
-6. **Confirmation**: View your file's IPFS CID, filename, and gateway URL upon successful upload
+1. **Select File**: Choose an image, PDF, or text file to upload
+2. **Preview**: Review the file preview (available for images and text)
+3. **Upload**: Click the upload button to submit your file
+4. **Payment**: The x402 middleware will handle the payment automatically
+5. **Confirmation**: View your file's IPFS CID, filename, and gateway URL upon successful upload
 
 ## API Routes
 
