@@ -21,5 +21,6 @@ export const middleware = paymentMiddleware(
 export const config = {
   matcher: [
     '/api/upload/:path*',
-  ]
+  ],
+  runtime: 'nodejs', // Use Node.js runtime instead of Edge
 };
