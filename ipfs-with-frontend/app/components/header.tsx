@@ -21,7 +21,21 @@ export default function Header() {
           </div>
         </div>
 
-
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-6">
+          <a
+            href="/"
+            className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition"
+          >
+            About
+          </a>
+        </div>
       </nav>
 
 
