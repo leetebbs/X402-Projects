@@ -21,6 +21,5 @@ export const middleware = paymentMiddleware(
 export const config = {
   matcher: [
     '/api/upload/:path*',
-    '/api/test/:path*',
   ]
 };
