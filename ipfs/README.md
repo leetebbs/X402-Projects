@@ -80,8 +80,6 @@ The server is configured to charge **$0.1 USDC** per file upload. This can be mo
 ### Starting the Server
 
 ```bash
-npm start
-# or
 node index.js
 ```
 
@@ -230,7 +228,7 @@ To run a full end-to-end test:
 
 ```bash
 # Terminal 1: Start the server
-npm start
+node index.js
 
 # Terminal 2: Run the test script
 node ipfsUploadTest.js
@@ -264,10 +262,3 @@ Before deploying to production:
 - [Ethers.js Documentation](https://docs.ethers.org/)
 - [Circle Testnet USDC Faucet](https://faucet.circle.com/)
 
-## License
-
-[Add your license here]
-
-## Support
-
-For issues or questions, please open an issue in the repository or contact the maintainers.
