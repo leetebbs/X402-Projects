@@ -124,9 +124,12 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
       <main className="flex flex-1 items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
         <div className="w-full max-w-3xl bg-white dark:bg-black rounded-lg">
-          <h2 className="text-4xl font-bold mb-8">Upload a File to IPFS</h2>
+          <div className="px-6 py-6">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Network - <span className="text-blue-500 font-medium">Base Sepolia</span></p>
+            <h2 className="text-4xl font-bold">Upload a File to IPFS</h2>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 px-6 pb-6">
             <div className="flex items-center justify-center w-full">
               <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:border-gray-600">
                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
