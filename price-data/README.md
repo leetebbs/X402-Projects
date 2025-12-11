@@ -154,7 +154,7 @@ npm install
 
 ### Run Locally
 ```bash
-npm start
+node index.js
 ```
 
 The server will start on `http://localhost:3000`
