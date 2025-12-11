@@ -1,5 +1,3 @@
-<img src="./assets/head.png" style="width: 100%; display: block;" alt="Header">
-
 # X402 Projects
 
 Welcome to the X402 Projects repository. 
