@@ -7,6 +7,3 @@ This workspace contains multiple interconnected projects and services that demon
 
 Each subdirectory contains its own `package.json` and README with specific installation and usage instructions. Refer to the individual project READMEs for detailed setup information.
 
-## License
-
-This project is part of the X402 Projects collection.
